@@ -2,7 +2,7 @@ from docx import Document
 import json
 
 # Load the document (replace 'file_path.docx' with the path to your document)
-doc = Document('C:/Users/Userpc/Desktop/model/dataset.docx')
+doc = Document('B-dataset.docx')
 
 # Initialize an empty list to store structured data
 structured_data = []
@@ -18,18 +18,18 @@ if len(paragraphs) % 3 == 0:
         entities_text = paragraphs[i + 2].split("Entities: ")[-1]
         
         # Evaluate Entities from the text as a Python dictionary
-        entities = eval(entities_text)
+        # entities = entities_text.split()
         
         # Create a structured dictionary for each example and append to structured_data list
         example = {
             "text": text,
             "intent": intent,
-            "entities": entities
+            "entities": entities_text
         }
         structured_data.append(example)
 
     # Save the structured data to a JSON file
-    with open('structured_data.json', 'w') as json_file:
+    with open('B_data.json', 'w') as json_file:
         json.dump(structured_data, json_file, indent=2)
 
     print("Conversion completed. Data saved to 'structured_data.json'")
