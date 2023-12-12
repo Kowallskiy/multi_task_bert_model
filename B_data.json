@@ -1,0 +1,72 @@
+[
+  {
+    "text": "\"Set a timer for 10 minutes.\"",
+    "intent": "'Set Timer'",
+    "entities": "O O O O B-DUR I-DUR"
+  },
+  {
+    "text": "\"Remind me about the meeting at 3 PM tomorrow.\"",
+    "intent": "'Set Reminder'",
+    "entities": "O O O O O O B-TIME I-TIME B-DATE"
+  },
+  {
+    "text": "\"Schedule an appointment for next Friday at 9 AM.\"",
+    "intent": "'Schedule Appointment'",
+    "entities": "O O O O B-DATE I-DATE O B-TIME I-TIME"
+  },
+  {
+    "text": "\"Can you set a reminder for my doctor's appointment on Monday?\"",
+    "intent": "'Set Reminder'",
+    "entities": "O O O O O O O O O O B-DATE"
+  },
+  {
+    "text": "\"I want to schedule a meeting for the 15th of this month at 2:30 PM.\"",
+    "intent": "'Schedule Meeting'",
+    "entities": "O O O O O O O O B-DATE I-DATE I-DATE I-DATE O B-TIME I-TIME"
+  },
+  {
+    "text": "\"Set an alarm for 7 AM.\"",
+    "intent": "'Set Alarm'",
+    "entities": "O O O O B-TIME I-TIME"
+  },
+  {
+    "text": "\"Remind me to call John in 30 minutes.\"",
+    "intent": "'Set Reminder'",
+    "entities": "O O O B-TASK I-TASK O B-DUR I-DUR"
+  },
+  {
+    "text": "\"Schedule a meeting for next Wednesday afternoon.\"",
+    "intent": "'Schedule Meeting'",
+    "entities": "O O O O B-DATE I-DATE B-TIME"
+  },
+  {
+    "text": "\"Can you set a timer for cooking for 1 hour?\"",
+    "intent": "'Set Timer'",
+    "entities": "O O O O O O B-TASK O B-DUR I-DUR"
+  },
+  {
+    "text": "\"Remind me about the project deadline at 5 PM on Friday.\"",
+    "intent": "'Set Reminder'",
+    "entities": "O O O O B-TASK I-TASK O B-TIME I-TIME O B-DATE"
+  },
+  {
+    "text": "\"Schedule a doctor's appointment for March 20th at 10:30 AM.\"",
+    "intent": "'Schedule Appointment'",
+    "entities": "O O O O O B-DATE I-DATE O B-TIME I-TIME"
+  },
+  {
+    "text": "\"Set a timer for a 15-minute break.\"",
+    "intent": "'Set Timer'",
+    "entities": "O O O O O B-TIME B-TASK"
+  },
+  {
+    "text": "\"Remind me to buy groceries tomorrow morning.\"",
+    "intent": "'Set Reminder'",
+    "entities": "O O O B-TASK I-TASK B-DATE B-TIME"
+  },
+  {
+    "text": "\"Schedule a conference call for the first Monday of next month at 3 PM.\"",
+    "intent": "'Schedule Meeting'",
+    "entities": "O O O O O O B-DATE I-DATE I-DATE I-DATE I-DATE O B-TIME I-TIME"
+  }
+]
