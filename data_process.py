@@ -2,7 +2,7 @@ from docx import Document
 import json
 
 # Load the document (replace 'file_path.docx' with the path to your document)
-doc = Document('B-dataset.docx')
+doc = Document('training_set.docx')
 
 # Initialize an empty list to store structured data
 structured_data = []
@@ -29,7 +29,7 @@ if len(paragraphs) % 3 == 0:
         structured_data.append(example)
 
     # Save the structured data to a JSON file
-    with open('B_data.json', 'w') as json_file:
+    with open('training_set.json', 'w') as json_file:
         json.dump(structured_data, json_file, indent=2)
 
     print("Conversion completed. Data saved to 'structured_data.json'")
