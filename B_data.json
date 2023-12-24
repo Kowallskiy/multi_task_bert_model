@@ -22,7 +22,7 @@
   {
     "text": "I want to schedule a meeting for the 15th of this month at 2:30 PM.",
     "intent": "'Schedule Meeting'",
-    "entities": "O O O O O O O O B-DATE I-DATE I-DATE I-DATE O B-TIME I-TIME"
+    "entities": "O O O O O O O O B-DATE I-DATE I-DATE I-DATE O B-TIME I-TIME I-TIME I-TIME"
   },
   {
     "text": "Set an alarm for 7 AM.",
@@ -52,12 +52,12 @@
   {
     "text": "Schedule a doctor's appointment for March 20th at 10:30 AM.",
     "intent": "'Schedule Appointment'",
-    "entities": "O O O O O B-DATE I-DATE O B-TIME I-TIME"
+    "entities": "O O O O O B-DATE I-DATE O B-TIME I-TIME I-TIME I-TIME"
   },
   {
     "text": "Set a timer for a 15-minute break.",
     "intent": "'Set Timer'",
-    "entities": "O O O O O B-DUR B-TASK"
+    "entities": "O O O O O B-DUR I-DUR I-DUR B-TASK"
   },
   {
     "text": "Remind me to buy groceries tomorrow morning.",
@@ -72,12 +72,12 @@
   {
     "text": "Can you remind me to send the report at 4:30 PM today?",
     "intent": "'Set Reminder'",
-    "entities": "O O O O O B-TASK I-TASK I-TASK O B-TIME I-TIME B-DATE"
+    "entities": "O O O O O B-TASK I-TASK I-TASK O B-TIME I-TIME I-TIME I-TIME B-DATE"
   },
   {
     "text": "Set a timer for a 20-minute workout session.",
     "intent": "'Set Timer'",
-    "entities": "O O O O O B-DUR B-TASK I-TASK"
+    "entities": "O O O O O B-DUR I-DUR I-DUR B-TASK I-TASK"
   },
   {
     "text": "Remind me to water the plants every Tuesday and Thursday at 9 AM.",
@@ -87,12 +87,12 @@
   {
     "text": "Schedule a team meeting for next Monday morning at 10:30.",
     "intent": "'Schedule Meeting'",
-    "entities": "O O O O O B-DATE I-DATE B-TIME I-TIME I-TIME"
+    "entities": "O O O O O B-DATE I-DATE B-TIME I-TIME I-TIME I-TIME I-TIME"
   },
   {
     "text": "Can you set an alarm for 6:45 AM?",
     "intent": "'Set Alarm'",
-    "entities": "O O O O O O B-TIME I-TIME"
+    "entities": "O O O O O O B-TIME I-TIME I-TIME I-TIME"
   },
   {
     "text": "Remind me about the webinar in 2 days at 2 PM.",
@@ -102,12 +102,12 @@
   {
     "text": "Schedule a dentist appointment for April 5th at 11:00 in the morning.",
     "intent": "'Schedule Appointment'",
-    "entities": "O O B-TASK I-TASK O B-DATE I-DATE O B-TIME I-TIME I-TIME I-TIME"
+    "entities": "O O B-TASK I-TASK O B-DATE I-DATE O B-TIME I-TIME I-TIME I-TIME I-TIME I-TIME"
   },
   {
     "text": "Set a timer for a 5-minute meditation session.",
     "intent": "'Set Timer'",
-    "entities": "O O O O O B-DUR B-TASK I-TASK"
+    "entities": "O O O O O B-DUR I-DUR I-DUR B-TASK I-TASK"
   },
   {
     "text": "Remind me to call Sarah next Wednesday afternoon.",
@@ -117,7 +117,7 @@
   {
     "text": "Schedule a review meeting for the end of the month at 4:30 PM.",
     "intent": "'Schedule Meeting'",
-    "entities": "O O B-TASK I-TASK O O B-DATE I-DATE I-DATE I-DATE O B-TIME I-TIME"
+    "entities": "O O B-TASK I-TASK O O B-DATE I-DATE I-DATE I-DATE O B-TIME I-TIME I-TIME I-TIME"
   },
   {
     "text": "Can you remind me to pay bills on the last day of the month?",
@@ -142,7 +142,7 @@
   {
     "text": "Can you set an alarm for 7:30 AM tomorrow?",
     "intent": "'Set Alarm'",
-    "entities": "O O O O O O B-TIME I-TIME B-DATE"
+    "entities": "O O O O O O B-TIME I-TIME I-TIME I-TIME B-DATE"
   },
   {
     "text": "Remind me about the presentation at 4 PM today.",
@@ -157,7 +157,7 @@
   {
     "text": "Set a timer for a 10-minute break between study sessions.",
     "intent": "'Set Timer'",
-    "entities": "O O O O O B-DUR O O O O"
+    "entities": "O O O O O B-DUR I-DUR I-DUR O O O O"
   },
   {
     "text": "Remind me to send the report at 9 AM tomorrow.",
