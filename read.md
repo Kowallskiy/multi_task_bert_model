@@ -1,1 +1,1 @@
-The main reason why I have not finished this project is I have been lazy. right now I'm laying in bed unable to get up because I don't have energy to do that. I must change my attitude as soon as I can
+I have to deploy the model by the end of January 2024
