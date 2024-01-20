@@ -1,1 +1,1 @@
-the project is in development
+the project is in development. Implementing weights and biased
