@@ -3,8 +3,8 @@ import torch
 import onnx
 import pytorch_lightning as pl
 import wandb
-from metrics import MyAccuracy
-from utils import num_unique_labels
+from src.metrics import MyAccuracy
+from src.utils import num_unique_labels
 from typing import Dict, Tuple, List, Optional
 
 class MultiTaskBertModel(pl.LightningModule):
