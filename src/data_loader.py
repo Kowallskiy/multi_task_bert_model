@@ -1,7 +1,7 @@
 import json
 import os
 from typing import Dict, List, Union
-from utils import structure_data
+from src.utils import structure_data
 
 def load_dataset(dataset_name: str) -> Dict[str, Union[str, List[str]]]:
     """
