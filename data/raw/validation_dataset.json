@@ -1,0 +1,122 @@
+[
+  {
+    "text": "Set a reminder for my dentist appointment next Tuesday at 9 AM.",
+    "intent": "'Set Reminder'",
+    "entities": "O O O O O B-TASK I-TASK B-DATE I-DATE O B-TIME I-TIME"
+  },
+  {
+    "text": "Can you schedule a meeting for Friday afternoon?",
+    "intent": "'Schedule Meeting'",
+    "entities": "O O O O O O B-DATE B-TIME"
+  },
+  {
+    "text": "Set an alarm for 7:30 AM to wake up.",
+    "intent": "'Set Alarm'",
+    "entities": "O O O O B-TIME I-TIME I-TIME O O O"
+  },
+  {
+    "text": "Remind me about the call with the client in 2 hours.",
+    "intent": "'Set Reminder'",
+    "entities": "O O O O B-TASK I-TASK I-TASK I-TASK O B-TIME I-TIME"
+  },
+  {
+    "text": "Schedule a doctor's appointment for May 10th at 11:45 AM.",
+    "intent": "'Schedule Appointment'",
+    "entities": "O O B-TASK I-TASK O B-DATE I-DATE O B-TIME I-TIME I-TIME I-TIME"
+  },
+  {
+    "text": "Schedule a conference call for next Monday morning at 9:00 sharp.",
+    "intent": "'Schedule Meeting'",
+    "entities": "O O B-TASK I-TASK O B-DATE I-DATE B-TIME I-TIME I-TIME I-TIME I-TIME O"
+  },
+  {
+    "text": "Set a timer for a 5-minute break between study sessions.",
+    "intent": "'Set Timer'",
+    "entities": "O O O O O B-DUR I-DUR I-DUR O O O O"
+  },
+  {
+    "text": "Remind me to water the plants every Sunday and Wednesday at 7 AM.",
+    "intent": "'Set Reminder'",
+    "entities": "O O O B-TASK I-TASK I-TASK B-DATE I-DATE O B-DATE O B-TIME I-TIME"
+  },
+  {
+    "text": "Can you schedule a dentist appointment for next month?",
+    "intent": "'Schedule Appointment'",
+    "entities": "O O O O B-TASK I-TASK O B-DATE I-DATE"
+  },
+  {
+    "text": "Set an alarm for 4:30 PM to walk the dog.",
+    "intent": "'Set Alarm'",
+    "entities": "O O O O B-TIME I-TIME I-TIME I-TIME O B-TASK I-TASK I-TASK"
+  },
+  {
+    "text": "Set a timer for 20 minutes while I meditate.",
+    "intent": "'Set Timer'",
+    "entities": "O O O O B-DUR I-DUR O O O"
+  },
+  {
+    "text": "Remind me to pick up dry cleaning this Thursday after work.",
+    "intent": "'Set Reminder'",
+    "entities": "O O O B-TASK I-TASK I-TASK I-TASK O B-DATE O O"
+  },
+  {
+    "text": "Schedule a team lunch for next Wednesday at noon.",
+    "intent": "'Schedule Meeting'",
+    "entities": "O O B-TASK I-TASK O B-DATE I-DATE O B-TIME"
+  },
+  {
+    "text": "Can you set an alarm for 8:15 AM tomorrow?",
+    "intent": "'Set Alarm'",
+    "entities": "O O O O O O B-TIME I-TIME I-TIME I-TIME B-DATE"
+  },
+  {
+    "text": "Remind me about the doctor's appointment on the 25th at 10:30 AM.",
+    "intent": "'Set Reminder'",
+    "entities": "O O O O B-TASK I-TASK O O B-DATE O B-TIME I-TIME I-TIME I-TIME"
+  },
+  {
+    "text": "Remind me to submit the report by next Monday at 5 PM.",
+    "intent": "'Set Reminder'",
+    "entities": "O O O B-TASK I-TASK I-TASK O B-DATE I-DATE O B-TIME I-TIME"
+  },
+  {
+    "text": "Set a timer for 45 minutes for a cooking session.",
+    "intent": "'Set Timer'",
+    "entities": "O O O O B-DUR I-DUR O O B-TASK I-TASK"
+  },
+  {
+    "text": "Schedule a client meeting for the 10th of next month at 2:30 PM.",
+    "intent": "'Schedule Meeting'",
+    "entities": "O O B-TASK I-TASK O O B-DATE I-DATE I-DATE I-DATE O B-TIME I-TIME I-TIME I-TIME"
+  },
+  {
+    "text": "Can you set an alarm for 9 AM every weekday?",
+    "intent": "'Set Alarm'",
+    "entities": "O O O O O O B-TIME I-TIME O B-DATE"
+  },
+  {
+    "text": "Remind me about the appointment with the lawyer on April 15th at 11 AM.",
+    "intent": "'Set Reminder'",
+    "entities": "O O O O B-TASK I-TASK I-TASK I-TASK O B-DATE I-DATE O B-TIME I-TIME"
+  },
+  {
+    "text": "Schedule a study group session for next Friday evening at 6:30 PM.",
+    "intent": "'Schedule Meeting'",
+    "entities": "O O B-TASK I-TASK I-TASK O B-DATE I-DATE O O B-TIME I-TIME I-TIME I-TIME"
+  },
+  {
+    "text": "Set a timer for a 10-minute power nap.",
+    "intent": "'Set Timer'",
+    "entities": "O O O O O B-DUR I-DUR I-DUR O O"
+  },
+  {
+    "text": "Remind me to buy tickets for the concert on Thursday at noon.",
+    "intent": "'Set Reminder'",
+    "entities": "O O O B-TASK I-TASK O O O O B-DATE O B-TIME"
+  },
+  {
+    "text": "Set an alarm for 7:45 AM to start morning exercises.",
+    "intent": "'Set Alarm'",
+    "entities": "O O O O B-TIME I-TIME I-TIME I-TIME O O O O"
+  }
+]
