@@ -1,1 +1,1 @@
-the project is in development. Wrote tests for different functions and classes. the next step is to deploy the model.
+the project is in development. Wrote tests for different functions and classes. the next step is to deploy the model. come up with a plan
