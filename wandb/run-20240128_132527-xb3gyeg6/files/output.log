@@ -1,0 +1,101 @@
+  | Name              | Type       | Params
+-------------------------------------------------
+0 | dropout           | Dropout    | 0
+1 | model             | BertModel  | 109 M
+2 | ner_classifier    | Linear     | 6.9 K
+3 | intent_classifier | Linear     | 3.8 K
+4 | accuracy          | MyAccuracy | 0
+-------------------------------------------------
+109 M     Trainable params
+0         Non-trainable params
+109 M     Total params
+437.972   Total estimated model params size (MB)
+C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:441: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=3` in the `DataLoader` to improve performance.
+
+Sanity Checking DataLoader 0: 100%|██████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:02<00:00,  0.99it/s]
+
+
+C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\loops\fit_loop.py:293: The number of training batches (35) is smaller than the logging interval Trainer(log_every_n_steps=40). Set a lower value for log_every_n_steps if you want to see logs for the training epoch.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 35/35 [01:39<00:00,  0.35it/s, v_num=yeg6]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 1: 100%|█| 35/35 [02:12<00:00,  0.26it/s, v_num=yeg6, validation_loss=2.920, val_ner_accuracy=0.552, val_intent_accuracy=0.417, training_loss=3.1
+
+
+
+
+
+
+
+
+Epoch 1: 100%|█| 35/35 [04:26<00:00,  0.13it/s, v_num=yeg6, validation_loss=2.640, val_ner_accuracy=0.674, val_intent_accuracy=0.333, training_loss=2.6

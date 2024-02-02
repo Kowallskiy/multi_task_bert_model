@@ -1,0 +1,59 @@
+  | Name              | Type       | Params
+-------------------------------------------------
+0 | dropout           | Dropout    | 0
+1 | model             | BertModel  | 109 M
+2 | ner_classifier    | Linear     | 6.9 K
+3 | intent_classifier | Linear     | 3.8 K
+4 | accuracy          | MyAccuracy | 0
+-------------------------------------------------
+109 M     Trainable params
+0         Non-trainable params
+109 M     Total params
+437.972   Total estimated model params size (MB)
+C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:441: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=3` in the `DataLoader` to improve performance.
+Sanity Checking DataLoader 0: 100%|██████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:01<00:00,  1.74it/s]
+Traceback (most recent call last):
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\onnx\_internal\onnx_proto_utils.py", line 221, in _add_onnxscript_fn
+    import onnx
+ModuleNotFoundError: No module named 'onnx'
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "c:\Users\Userpc\Desktop\model\src\train.py", line 32, in <module>
+    trainer.fit(model, dm)
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 544, in fit
+    call._call_and_handle_interrupt(
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\trainer\call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 580, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 989, in _run
+    results = self._run_stage()
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1033, in _run_stage
+    self._run_sanity_check()
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\trainer\trainer.py", line 1062, in _run_sanity_check
+    val_loop.run()
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\loops\utilities.py", line 182, in _decorator
+    return loop_run(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\loops\evaluation_loop.py", line 141, in run
+    return self.on_run_end()
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\loops\evaluation_loop.py", line 253, in on_run_end
+    self._on_evaluation_epoch_end()
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\loops\evaluation_loop.py", line 329, in _on_evaluation_epoch_end
+    call._call_lightning_module_hook(trainer, hook_name)
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\trainer\call.py", line 157, in _call_lightning_module_hook
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Userpc\Desktop\model\src\model.py", line 114, in on_validation_epoch_end
+    torch.onnx.export(self, dummy_input, model_filename)
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\onnx\utils.py", line 516, in export
+    _export(
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\onnx\utils.py", line 1670, in _export
+    proto = onnx_proto_utils._add_onnxscript_fn(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\torch\onnx\_internal\onnx_proto_utils.py", line 223, in _add_onnxscript_fn
+    raise errors.OnnxExporterError("Module onnx is not installed!") from e
+torch.onnx.errors.OnnxExporterError: Module onnx is not installed!

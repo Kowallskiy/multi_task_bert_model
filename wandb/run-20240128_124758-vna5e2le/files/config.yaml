@@ -1,0 +1,165 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.4
+    cli_version: 0.16.2
+    framework: huggingface
+    huggingface_version: 4.33.2
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1706431679.095412
+    t:
+      1:
+      - 1
+      - 9
+      - 11
+      - 41
+      - 49
+      - 55
+      - 103
+      2:
+      - 1
+      - 9
+      - 11
+      - 41
+      - 49
+      - 55
+      - 103
+      3:
+      - 7
+      - 23
+      4: 3.11.4
+      5: 0.16.2
+      6: 4.33.2
+      8:
+      - 3
+      - 5
+      13: windows-amd64
+    m:
+    - 1: trainer/global_step
+      6:
+      - 3
+config:
+  desc: null
+  value: "BertConfig {\n  \"architectures\": [\n    \"BertForMaskedLM\"\n  ],\n  \"\
+    attention_probs_dropout_prob\": 0.1,\n  \"classifier_dropout\": null,\n  \"gradient_checkpointing\"\
+    : false,\n  \"hidden_act\": \"gelu\",\n  \"hidden_dropout_prob\": 0.1,\n  \"hidden_size\"\
+    : 768,\n  \"initializer_range\": 0.02,\n  \"intermediate_size\": 3072,\n  \"layer_norm_eps\"\
+    : 1e-12,\n  \"max_position_embeddings\": 512,\n  \"model_type\": \"bert\",\n \
+    \ \"num_attention_heads\": 12,\n  \"num_hidden_layers\": 12,\n  \"pad_token_id\"\
+    : 0,\n  \"position_embedding_type\": \"absolute\",\n  \"transformers_version\"\
+    : \"4.33.2\",\n  \"type_vocab_size\": 2,\n  \"use_cache\": true,\n  \"vocab_size\"\
+    : 30522\n}\n"
+dataset:
+  desc: null
+  value:
+    text:
+    - Set a timer for 10 minutes.
+    - Remind me about the meeting at 3 PM tomorrow.
+    - Schedule an appointment for next Friday at 9 AM.
+    - Can you set a reminder for my doctor's appointment on Monday?
+    - I want to schedule a meeting for the 15th of this month at 2:30 PM.
+    - Set an alarm for 7 AM.
+    - Remind me to call John in 30 minutes.
+    - '"Schedule a meeting for next Wednesday afternoon."'
+    - Can you set a timer for cooking for 1 hour?
+    - Remind me about the project deadline at 5 PM on Friday.
+    - Schedule a doctor's appointment for March 20th at 10:30 AM.
+    - Set a timer for a 15-minute break.
+    - Remind me to buy groceries tomorrow morning.
+    - Schedule a conference call for the first Monday of next month at 3 PM.
+    - Can you remind me to send the report at 4:30 PM today?
+    - Set a timer for a 20-minute workout session.
+    - Remind me to water the plants every Tuesday and Thursday at 9 AM.
+    - Schedule a team meeting for next Monday morning at 10:30.
+    - Can you set an alarm for 6:45 AM?
+    - Remind me about the webinar in 2 days at 2 PM.
+    - Schedule a dentist appointment for April 5th at 11:00 in the morning.
+    - Set a timer for a 5-minute meditation session.
+    - Remind me to call Sarah next Wednesday afternoon.
+    - Schedule a review meeting for the end of the month at 4:30 PM.
+    - Can you remind me to pay bills on the last day of the month?
+    - Set a timer for 45 minutes for a study session.
+    - Remind me to pick up the laundry every Friday afternoon.
+    - Schedule a client meeting for the 10th of next month at 2 PM.
+    - Can you set an alarm for 7:30 AM tomorrow?
+    - Remind me about the presentation at 4 PM today.
+    - Schedule a doctor's appointment for May 15th in the evening.
+    - Set a timer for a 10-minute break between study sessions.
+    - Remind me to send the report at 9 AM tomorrow.
+    - Schedule a team lunch for next Friday at noon.
+    - Can you remind me to buy groceries on Saturday afternoon?
+    entities:
+    - O O O O B-DUR I-DUR
+    - O O O O O O B-TIME I-TIME B-DATE
+    - O O O O B-DATE I-DATE O B-TIME I-TIME
+    - O O O O O O O O O O B-DATE
+    - O O O O O O O O B-DATE I-DATE I-DATE I-DATE O B-TIME I-TIME I-TIME I-TIME
+    - O O O O B-TIME I-TIME
+    - O O O B-TASK I-TASK O B-DUR I-DUR
+    - O O O O B-DATE I-DATE B-TIME
+    - O O O O O O B-TASK O B-DUR I-DUR
+    - O O O O B-TASK I-TASK O B-TIME I-TIME O B-DATE
+    - O O O O O B-DATE I-DATE O B-TIME I-TIME I-TIME I-TIME
+    - O O O O O B-DUR I-DUR I-DUR B-TASK
+    - O O O B-TASK I-TASK B-DATE B-TIME
+    - O O O O O O B-DATE I-DATE I-DATE I-DATE I-DATE O B-TIME I-TIME
+    - O O O O O B-TASK I-TASK I-TASK O B-TIME I-TIME I-TIME I-TIME B-DATE
+    - O O O O O B-DUR I-DUR I-DUR B-TASK I-TASK
+    - O O O B-TASK I-TASK I-TASK O B-DATE O B-DATE O B-TIME I-TIME
+    - O O O O O B-DATE I-DATE B-TIME I-TIME I-TIME I-TIME I-TIME
+    - O O O O O O B-TIME I-TIME I-TIME I-TIME
+    - O O O O B-TASK O B-DUR I-DUR O B-TIME I-TIME
+    - O O B-TASK I-TASK O B-DATE I-DATE O B-TIME I-TIME I-TIME I-TIME I-TIME I-TIME
+    - O O O O O B-DUR I-DUR I-DUR B-TASK I-TASK
+    - O O O B-TASK I-TASK B-DATE I-DATE B-TIME
+    - O O B-TASK I-TASK O O B-DATE I-DATE I-DATE I-DATE O B-TIME I-TIME I-TIME I-TIME
+    - O O O O O B-TASK I-TASK O O B-DATE I-DATE I-DATE I-DATE I-DATE
+    - O O O O B-DUR I-DUR O O B-TASK I-TASK
+    - O O O B-TASK I-TASK I-TASK I-TASK O B-DATE B-TIME
+    - O O B-TASK I-TASK O O B-DATE I-DATE I-DATE I-DATE O B-TIME I-TIME
+    - O O O O O O B-TIME I-TIME I-TIME I-TIME B-DATE
+    - O O O O B-TASK O B-TIME I-TIME B-DATE
+    - O O B-TASK I-TASK O B-DATE I-DATE O O B-TIME
+    - O O O O O B-DUR I-DUR I-DUR O O O O
+    - O O O B-TASK I-TASK I-TASK O B-TIME I-TIME B-DATE
+    - O O B-TASK I-TASK O B-DATE I-DATE O B-TIME
+    - O O O O O B-TASK I-TASK O B-DATE B-TIME
+    intent:
+    - '''Set Timer'''
+    - '''Set Reminder'''
+    - '''Schedule Appointment'''
+    - '''Set Reminder'''
+    - '''Schedule Meeting'''
+    - '''Set Alarm'''
+    - '''Set Reminder'''
+    - '''Schedule Meeting'''
+    - '''Set Timer'''
+    - '''Set Reminder'''
+    - '''Schedule Appointment'''
+    - '''Set Timer'''
+    - '''Set Reminder'''
+    - '''Schedule Meeting'''
+    - '''Set Reminder'''
+    - '''Set Timer'''
+    - '''Set Reminder'''
+    - '''Schedule Meeting'''
+    - '''Set Alarm'''
+    - '''Set Reminder'''
+    - '''Schedule Appointment'''
+    - '''Set Timer'''
+    - '''Set Reminder'''
+    - '''Schedule Meeting'''
+    - '''Set Reminder'''
+    - '''Set Timer'''
+    - '''Set Reminder'''
+    - '''Schedule Meeting'''
+    - '''Set Alarm'''
+    - '''Set Reminder'''
+    - '''Schedule Appointment'''
+    - '''Set Timer'''
+    - '''Set Reminder'''
+    - '''Schedule Meeting'''
+    - '''Set Reminder'''

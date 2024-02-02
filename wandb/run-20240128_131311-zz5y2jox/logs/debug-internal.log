@@ -1,0 +1,265 @@
+2024-01-28 13:13:11,408 INFO    StreamThr :10800 [internal.py:wandb_internal():86] W&B internal server running at pid: 10800, started at: 2024-01-28 13:13:11.407894
+2024-01-28 13:13:11,411 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status
+2024-01-28 13:13:11,421 INFO    WriterThread:10800 [datastore.py:open_for_write():87] open: .\wandb\run-20240128_131311-zz5y2jox\run-zz5y2jox.wandb
+2024-01-28 13:13:11,423 DEBUG   SenderThread:10800 [sender.py:send():382] send: header
+2024-01-28 13:13:11,632 DEBUG   SenderThread:10800 [sender.py:send():382] send: run
+2024-01-28 13:13:11,635 INFO    SenderThread:10800 [sender.py:_maybe_setup_resume():763] checking resume status for None/lit-wandb/zz5y2jox
+2024-01-28 13:13:13,561 INFO    SenderThread:10800 [dir_watcher.py:__init__():211] watching files in: .\wandb\run-20240128_131311-zz5y2jox\files
+2024-01-28 13:13:13,561 INFO    SenderThread:10800 [sender.py:_start_run_threads():1136] run started: zz5y2jox with start time 1706433191.409894
+2024-01-28 13:13:13,585 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: check_version
+2024-01-28 13:13:13,585 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: check_version
+2024-01-28 13:13:15,103 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: run_start
+2024-01-28 13:13:15,539 DEBUG   HandlerThread:10800 [system_info.py:__init__():27] System info init
+2024-01-28 13:13:15,540 DEBUG   HandlerThread:10800 [system_info.py:__init__():42] System info init done
+2024-01-28 13:13:15,540 INFO    HandlerThread:10800 [system_monitor.py:start():194] Starting system monitor
+2024-01-28 13:13:15,540 INFO    SystemMonitor:10800 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-28 13:13:15,540 INFO    HandlerThread:10800 [system_monitor.py:probe():214] Collecting system info
+2024-01-28 13:13:15,544 INFO    SystemMonitor:10800 [interfaces.py:start():190] Started cpu monitoring
+2024-01-28 13:13:15,545 INFO    SystemMonitor:10800 [interfaces.py:start():190] Started disk monitoring
+2024-01-28 13:13:15,546 INFO    SystemMonitor:10800 [interfaces.py:start():190] Started gpu monitoring
+2024-01-28 13:13:15,552 INFO    SystemMonitor:10800 [interfaces.py:start():190] Started memory monitoring
+2024-01-28 13:13:15,569 INFO    SystemMonitor:10800 [interfaces.py:start():190] Started network monitoring
+2024-01-28 13:13:15,588 DEBUG   HandlerThread:10800 [system_info.py:probe():151] Probing system
+2024-01-28 13:13:15,590 DEBUG   HandlerThread:10800 [system_info.py:_probe_git():136] Probing git
+2024-01-28 13:13:15,603 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:15,604 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:15,718 DEBUG   HandlerThread:10800 [system_info.py:_probe_git():144] Probing git done
+2024-01-28 13:13:15,718 DEBUG   HandlerThread:10800 [system_info.py:probe():199] Probing system done
+2024-01-28 13:13:15,718 DEBUG   HandlerThread:10800 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.19045-SP0', 'python': '3.11.4', 'heartbeatAt': '2024-01-28T09:13:15.588729', 'startedAt': '2024-01-28T09:13:11.386498', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'c:\\Users\\Userpc\\Desktop\\model\\src\\train.py', 'codePathLocal': 'src\\train.py', 'codePath': 'src\\train.py', 'git': {'remote': 'https://github.com/Kowallskiy/model.git', 'commit': '8d420ad6dc9ec0d8b0f0dbd65e8926a22fd7be08'}, 'email': 'trane-101@yandex.ru', 'root': 'C:/Users/Userpc/Desktop/model', 'host': 'User', 'username': 'Userpc', 'executable': 'C:\\Users\\Userpc\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', 'cpu_count': 2, 'cpu_count_logical': 4, 'cpu_freq': {'current': 2197.0, 'min': 0.0, 'max': 2197.0}, 'cpu_freq_per_core': [{'current': 2197.0, 'min': 0.0, 'max': 2197.0}], 'disk': {'/': {'total': 372.60351181030273, 'used': 334.36751556396484}}, 'gpu': 'GeForce 930M', 'gpu_count': 1, 'gpu_devices': [{'name': 'GeForce 930M', 'memory_total': 2147483648}], 'memory': {'total': 5.905109405517578}}
+2024-01-28 13:13:15,719 INFO    HandlerThread:10800 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-28 13:13:15,719 INFO    HandlerThread:10800 [system_monitor.py:probe():227] Publishing system info
+2024-01-28 13:13:15,720 INFO    HandlerThread:10800 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-28 13:13:15,727 DEBUG   SenderThread:10800 [sender.py:send():382] send: files
+2024-01-28 13:13:15,728 INFO    SenderThread:10800 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-01-28 13:13:15,742 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: python_packages
+2024-01-28 13:13:15,742 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: python_packages
+2024-01-28 13:13:15,743 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-28 13:13:15,744 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: stop_status
+2024-01-28 13:13:15,750 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-28 13:13:16,092 DEBUG   SenderThread:10800 [sender.py:send():382] send: telemetry
+2024-01-28 13:13:16,093 DEBUG   SenderThread:10800 [sender.py:send():382] send: metric
+2024-01-28 13:13:16,093 DEBUG   SenderThread:10800 [sender.py:send():382] send: telemetry
+2024-01-28 13:13:16,093 DEBUG   SenderThread:10800 [sender.py:send():382] send: metric
+2024-01-28 13:13:16,094 WARNING SenderThread:10800 [sender.py:send_metric():1354] Seen metric with glob (shouldn't happen)
+2024-01-28 13:13:16,142 DEBUG   SenderThread:10800 [sender.py:send():382] send: config
+2024-01-28 13:13:16,510 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:13:16,593 INFO    Thread-16 :10800 [dir_watcher.py:_on_file_created():271] file/dir created: .\wandb\run-20240128_131311-zz5y2jox\files\wandb-metadata.json
+2024-01-28 13:13:16,594 INFO    Thread-16 :10800 [dir_watcher.py:_on_file_created():271] file/dir created: .\wandb\run-20240128_131311-zz5y2jox\files\output.log
+2024-01-28 13:13:16,594 INFO    Thread-16 :10800 [dir_watcher.py:_on_file_created():271] file/dir created: .\wandb\run-20240128_131311-zz5y2jox\files\requirements.txt
+2024-01-28 13:13:17,643 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:17,644 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:18,453 INFO    wandb-upload_0:10800 [upload_job.py:push():131] Uploaded file C:\Users\Userpc\AppData\Local\Temp\tmpaxxb6ocowandb\pthyikwi-wandb-metadata.json
+2024-01-28 13:13:18,607 INFO    Thread-16 :10800 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20240128_131311-zz5y2jox\files\output.log
+2024-01-28 13:13:19,743 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:19,743 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:21,778 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:21,778 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:22,017 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:13:23,892 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:23,893 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:25,927 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:25,928 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:27,034 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:13:28,066 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:28,067 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:32,462 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:13:34,221 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:34,221 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:37,399 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:13:42,460 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:13:43,170 INFO    Thread-16 :10800 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20240128_131311-zz5y2jox\files\config.yaml
+2024-01-28 13:13:44,298 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:44,298 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:46,432 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:46,432 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:48,235 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:13:48,475 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:48,475 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:50,595 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:50,595 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:52,675 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:52,675 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:53,279 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:13:54,786 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:54,786 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:56,837 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:56,837 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:58,318 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:13:59,770 ERROR   gpu       :10800 [interfaces.py:aggregate():161] Failed to serialize metric: division by zero
+2024-01-28 13:13:59,798 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:13:59,799 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:14:01,823 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-28 13:14:01,836 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:14:01,836 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:14:02,230 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-28 13:14:02,231 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: stop_status
+2024-01-28 13:14:03,652 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:14:03,937 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:14:03,938 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:14:05,995 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:14:05,996 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:14:08,085 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:14:08,116 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:14:08,698 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:14:10,164 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:14:10,164 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:14:10,833 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-28 13:14:10,835 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: stop_status
+2024-01-28 13:14:12,292 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:14:12,292 ERROR   gpu       :10800 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-28 13:14:13,706 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:14:13,900 DEBUG   SenderThread:10800 [sender.py:send():382] send: exit
+2024-01-28 13:14:13,900 INFO    SenderThread:10800 [sender.py:send_exit():589] handling exit code: 1
+2024-01-28 13:14:13,900 INFO    SenderThread:10800 [sender.py:send_exit():591] handling runtime: 58
+2024-01-28 13:14:13,904 INFO    SenderThread:10800 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-28 13:14:13,904 INFO    SenderThread:10800 [sender.py:send_exit():597] send defer
+2024-01-28 13:14:13,905 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:13,905 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 0
+2024-01-28 13:14:13,906 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:13,906 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-01-28 13:14:13,906 INFO    SenderThread:10800 [sender.py:transition_state():617] send defer: 1
+2024-01-28 13:14:13,906 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:13,906 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 1
+2024-01-28 13:14:13,907 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:13,907 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-01-28 13:14:13,907 INFO    SenderThread:10800 [sender.py:transition_state():617] send defer: 2
+2024-01-28 13:14:13,907 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:13,907 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 2
+2024-01-28 13:14:13,907 INFO    HandlerThread:10800 [system_monitor.py:finish():203] Stopping system monitor
+2024-01-28 13:14:13,913 DEBUG   SystemMonitor:10800 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-28 13:14:13,913 INFO    HandlerThread:10800 [interfaces.py:finish():202] Joined cpu monitor
+2024-01-28 13:14:13,914 DEBUG   SystemMonitor:10800 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-28 13:14:13,914 INFO    HandlerThread:10800 [interfaces.py:finish():202] Joined disk monitor
+2024-01-28 13:14:13,920 DEBUG   SystemMonitor:10800 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-28 13:14:13,939 ERROR   gpu       :10800 [interfaces.py:aggregate():161] Failed to serialize metric: division by zero
+2024-01-28 13:14:13,939 INFO    HandlerThread:10800 [interfaces.py:finish():202] Joined gpu monitor
+2024-01-28 13:14:13,939 INFO    HandlerThread:10800 [interfaces.py:finish():202] Joined memory monitor
+2024-01-28 13:14:13,940 INFO    HandlerThread:10800 [interfaces.py:finish():202] Joined network monitor
+2024-01-28 13:14:13,940 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:13,940 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-01-28 13:14:13,940 INFO    SenderThread:10800 [sender.py:transition_state():617] send defer: 3
+2024-01-28 13:14:13,940 DEBUG   SenderThread:10800 [sender.py:send():382] send: stats
+2024-01-28 13:14:13,941 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:13,941 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 3
+2024-01-28 13:14:13,941 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:13,941 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-01-28 13:14:13,941 INFO    SenderThread:10800 [sender.py:transition_state():617] send defer: 4
+2024-01-28 13:14:13,942 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:13,942 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 4
+2024-01-28 13:14:13,942 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:13,942 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-01-28 13:14:13,942 INFO    SenderThread:10800 [sender.py:transition_state():617] send defer: 5
+2024-01-28 13:14:13,942 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:13,942 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 5
+2024-01-28 13:14:13,943 DEBUG   SenderThread:10800 [sender.py:send():382] send: summary
+2024-01-28 13:14:13,944 INFO    SenderThread:10800 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-28 13:14:13,944 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:13,944 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-01-28 13:14:13,944 INFO    SenderThread:10800 [sender.py:transition_state():617] send defer: 6
+2024-01-28 13:14:13,945 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:13,945 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 6
+2024-01-28 13:14:13,945 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:13,945 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-01-28 13:14:13,945 INFO    SenderThread:10800 [sender.py:transition_state():617] send defer: 7
+2024-01-28 13:14:13,946 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:14:13,946 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:13,946 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 7
+2024-01-28 13:14:13,946 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:13,946 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-01-28 13:14:14,649 INFO    Thread-16 :10800 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20240128_131311-zz5y2jox\files\output.log
+2024-01-28 13:14:14,650 INFO    Thread-16 :10800 [dir_watcher.py:_on_file_created():271] file/dir created: .\wandb\run-20240128_131311-zz5y2jox\files\wandb-summary.json
+2024-01-28 13:14:14,910 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-28 13:14:16,265 INFO    SenderThread:10800 [sender.py:transition_state():617] send defer: 8
+2024-01-28 13:14:16,265 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: poll_exit
+2024-01-28 13:14:16,265 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:16,266 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 8
+2024-01-28 13:14:16,266 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:16,266 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-01-28 13:14:16,267 INFO    SenderThread:10800 [job_builder.py:build():296] Attempting to build job artifact
+2024-01-28 13:14:16,630 INFO    SenderThread:10800 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-01-28 13:14:16,667 INFO    Thread-16 :10800 [dir_watcher.py:_on_file_modified():288] file/dir modified: .\wandb\run-20240128_131311-zz5y2jox\files\output.log
+2024-01-28 13:14:16,931 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-28 13:14:21,891 INFO    SenderThread:10800 [job_builder.py:build():402] adding wandb-job metadata file
+2024-01-28 13:14:22,188 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: keepalive
+2024-01-28 13:14:22,769 INFO    SenderThread:10800 [sender.py:transition_state():617] send defer: 9
+2024-01-28 13:14:22,770 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: poll_exit
+2024-01-28 13:14:22,771 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:22,771 DEBUG   SenderThread:10800 [sender.py:send():382] send: artifact
+2024-01-28 13:14:22,772 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 9
+2024-01-28 13:14:22,777 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:14:23,199 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-28 13:14:24,845 INFO    SenderThread:10800 [sender.py:send_artifact():1494] sent artifact job-https___github.com_Kowallskiy_model.git_src_train.py - {'id': 'QXJ0aWZhY3Q6NzA1NDk5NDA3', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEzNDUwMzEzMA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NzA1NDk5NDA3', 'versionIndex': 1}}}
+2024-01-28 13:14:24,845 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:24,845 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-01-28 13:14:24,845 INFO    SenderThread:10800 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-01-28 13:14:25,752 INFO    SenderThread:10800 [dir_watcher.py:finish():388] scan: .\wandb\run-20240128_131311-zz5y2jox\files
+2024-01-28 13:14:25,753 INFO    SenderThread:10800 [dir_watcher.py:finish():402] scan save: .\wandb\run-20240128_131311-zz5y2jox\files\config.yaml config.yaml
+2024-01-28 13:14:25,754 INFO    SenderThread:10800 [dir_watcher.py:finish():402] scan save: .\wandb\run-20240128_131311-zz5y2jox\files\output.log output.log
+2024-01-28 13:14:25,759 INFO    SenderThread:10800 [dir_watcher.py:finish():402] scan save: .\wandb\run-20240128_131311-zz5y2jox\files\requirements.txt requirements.txt
+2024-01-28 13:14:25,767 INFO    SenderThread:10800 [dir_watcher.py:finish():402] scan save: .\wandb\run-20240128_131311-zz5y2jox\files\wandb-metadata.json wandb-metadata.json
+2024-01-28 13:14:25,768 INFO    SenderThread:10800 [dir_watcher.py:finish():402] scan save: .\wandb\run-20240128_131311-zz5y2jox\files\wandb-summary.json wandb-summary.json
+2024-01-28 13:14:25,778 INFO    SenderThread:10800 [sender.py:transition_state():617] send defer: 10
+2024-01-28 13:14:25,779 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: poll_exit
+2024-01-28 13:14:25,780 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:25,785 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 10
+2024-01-28 13:14:25,787 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:25,788 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-01-28 13:14:25,788 INFO    SenderThread:10800 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-28 13:14:26,234 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-28 13:14:26,235 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: poll_exit
+2024-01-28 13:14:27,244 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-28 13:14:27,245 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: poll_exit
+2024-01-28 13:14:27,331 INFO    wandb-upload_0:10800 [upload_job.py:push():131] Uploaded file .\wandb\run-20240128_131311-zz5y2jox\files\config.yaml
+2024-01-28 13:14:27,883 INFO    wandb-upload_2:10800 [upload_job.py:push():131] Uploaded file .\wandb\run-20240128_131311-zz5y2jox\files\requirements.txt
+2024-01-28 13:14:28,269 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: status_report
+2024-01-28 13:14:28,269 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-28 13:14:28,270 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: poll_exit
+2024-01-28 13:14:28,512 INFO    wandb-upload_1:10800 [upload_job.py:push():131] Uploaded file .\wandb\run-20240128_131311-zz5y2jox\files\output.log
+2024-01-28 13:14:28,913 INFO    wandb-upload_3:10800 [upload_job.py:push():131] Uploaded file .\wandb\run-20240128_131311-zz5y2jox\files\wandb-summary.json
+2024-01-28 13:14:29,123 INFO    Thread-15 (_thread_body):10800 [sender.py:transition_state():617] send defer: 11
+2024-01-28 13:14:29,124 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:29,124 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 11
+2024-01-28 13:14:29,125 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:29,125 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-01-28 13:14:29,125 INFO    SenderThread:10800 [file_pusher.py:join():181] waiting for file pusher
+2024-01-28 13:14:29,126 INFO    SenderThread:10800 [sender.py:transition_state():617] send defer: 12
+2024-01-28 13:14:29,126 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:29,126 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 12
+2024-01-28 13:14:29,127 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:29,127 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-01-28 13:14:29,127 INFO    SenderThread:10800 [file_stream.py:finish():595] file stream finish called
+2024-01-28 13:14:29,282 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-28 13:14:29,534 INFO    SenderThread:10800 [file_stream.py:finish():599] file stream finish is done
+2024-01-28 13:14:29,534 INFO    SenderThread:10800 [sender.py:transition_state():617] send defer: 13
+2024-01-28 13:14:29,535 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: poll_exit
+2024-01-28 13:14:29,536 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:29,537 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 13
+2024-01-28 13:14:29,538 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:29,538 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-01-28 13:14:29,538 INFO    SenderThread:10800 [sender.py:transition_state():617] send defer: 14
+2024-01-28 13:14:29,539 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: defer
+2024-01-28 13:14:29,540 INFO    HandlerThread:10800 [handler.py:handle_request_defer():172] handle defer: 14
+2024-01-28 13:14:29,540 DEBUG   SenderThread:10800 [sender.py:send():382] send: final
+2024-01-28 13:14:29,541 DEBUG   SenderThread:10800 [sender.py:send():382] send: footer
+2024-01-28 13:14:29,541 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: defer
+2024-01-28 13:14:29,542 INFO    SenderThread:10800 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-01-28 13:14:29,543 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-28 13:14:29,546 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-28 13:14:29,547 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: server_info
+2024-01-28 13:14:29,548 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: poll_exit
+2024-01-28 13:14:29,548 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: get_summary
+2024-01-28 13:14:29,550 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: poll_exit
+2024-01-28 13:14:29,550 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: sampled_history
+2024-01-28 13:14:29,551 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: server_info
+2024-01-28 13:14:29,552 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-28 13:14:29,558 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: job_info
+2024-01-28 13:14:29,789 DEBUG   SenderThread:10800 [sender.py:send_request():409] send_request: job_info
+2024-01-28 13:14:29,790 INFO    MainThread:10800 [wandb_run.py:_footer_history_summary_info():3857] rendering history
+2024-01-28 13:14:29,791 INFO    MainThread:10800 [wandb_run.py:_footer_history_summary_info():3889] rendering summary
+2024-01-28 13:14:29,791 INFO    MainThread:10800 [wandb_run.py:_footer_sync_info():3816] logging synced files
+2024-01-28 13:14:29,796 DEBUG   HandlerThread:10800 [handler.py:handle_request():146] handle_request: shutdown
+2024-01-28 13:14:29,797 INFO    HandlerThread:10800 [handler.py:finish():869] shutting down handler
+2024-01-28 13:14:30,572 INFO    WriterThread:10800 [datastore.py:close():296] close: .\wandb\run-20240128_131311-zz5y2jox\run-zz5y2jox.wandb
+2024-01-28 13:14:30,804 INFO    SenderThread:10800 [sender.py:finish():1572] shutting down sender
+2024-01-28 13:14:30,805 INFO    SenderThread:10800 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-28 13:14:30,806 INFO    SenderThread:10800 [file_pusher.py:join():181] waiting for file pusher
