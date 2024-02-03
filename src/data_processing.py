@@ -4,80 +4,7 @@ from transformers import BertTokenizerFast, BertModel
 from transformers import BertConfig, BertPreTrainedModel
 import numpy as np
 from typing import Dict, List, Union, Tuple
-
-
-def num_unique_labels(dataset: Dict[str, Union[str, List[str]]]) -> Tuple[int, int]:
-    """
-    Calculate the number of NER labels and INTENT labels in the dataset.
-
-    Args:
-        dataset (dict): A dictionary containing 'text', 'ner' and 'intent' keys.
-
-    Returns:
-        Tuple: Number of unique NER and INTENT lables.
-    """
-    one_dimensional_ner = [tag for subset in dataset['ner'] for tag in subset]
-    return len(set(one_dimensional_ner)), len(set(dataset['intent']))
-
-def ner_labels_to_ids() -> Dict[str, int]:
-    """
-    Map NER labels to corresponding numeric IDs.
-
-    Returns:
-        Dict[str, int]: A dictionary where keys are NER labels, and values are their corresponding IDs.
-    """
-    labels_to_ids_ner = {
-    'O': 0,
-    'B-DATE': 1,
-    'I-DATE': 2,
-    'B-TIME': 3,
-    'I-TIME': 4,
-    'B-TASK': 5,
-    'I-TASK': 6,
-    'B-DUR': 7,
-    'I-DUR': 8
-    }
-    return labels_to_ids_ner
-
-def ner_ids_to_labels(ner_labels_to_ids) -> Dict[int, str]:
-    """
-    Map numeric IDs to corresponding NER labels.
-
-    Returns:
-        Dict[int, str]: A dictionary where keys are numeric IDs, and values are their corresponding NER labels.
-    """
-    ner_ids_to_labels = {v: k for k, v in ner_labels_to_ids.items()}
-    return ner_ids_to_labels
-
-def intent_labels_to_ids() -> Dict[str, int]:
-    """
-    Map intent labels to corresponding numeric values.
-
-    Returns:
-        Dict[str, int]: A dictionary where keys are intent labels, and values are their corresponding numeric IDs.
-    """
-    intent_labels_to_ids = {
-    "'Schedule Appointment'": 0,
-    "'Schedule Meeting'": 1,
-    "'Set Alarm'": 2,
-    "'Set Reminder'": 3,
-    "'Set Timer'": 4
-    }
-    return intent_labels_to_ids
-
-def intent_ids_to_labels(intent_labels_to_ids) -> Dict[int, str]:
-    """
-    Map numeric values to corresponding intent labels.
-
-    Returns:
-        Dict[int, str]: A dictionary where keys are numeric IDs, and values are their corresponding intent labels.
-    """
-    intent_ids_to_labels = {v: k for k, v in intent_labels_to_ids.items()}
-    return intent_ids_to_labels
-
-def tokenizer() -> BertTokenizerFast:
-    tokenizer = BertTokenizerFast.from_pretrained('bert-base-uncased')
-    return tokenizer
+from src.utils import ner_labels_to_ids, intent_labels_to_ids, structure_data
 
 class tokenized_dataset(Dataset):
     """
@@ -86,8 +13,6 @@ class tokenized_dataset(Dataset):
     Args:
         dataset (dict): A dictionary containing 'text', 'ner', and 'intent' keys.
         tokenizer (BertTokenizerFast): A tokenizer for processing text input.
-        ner_labels_to_ids (Dict[str, int]): A mapping from NER labels to corresponding numeric IDs.
-        intent_labels_to_ids (Dict[str, int]): A mapping from intent labels to corresponding numeric IDs.
         max_len (int, optionl): Maximum length of tokenized sequences (default: 128).
 
     Attributes:
@@ -99,14 +24,18 @@ class tokenized_dataset(Dataset):
 
         __len__(self) -> int:
             Get the total number of samples int the dataset.
+
+    Returns:
+        Dict[str, torch.Tensor]: A dictionary containing tokenized and encoded text, NER and intent labels.
     """
-    def __init__(self, dataset: Dict[str, List[str]], tokenizer: BertTokenizerFast,
-                 ner_labels_to_ids: Dict[str, int], intent_labels_to_ids: Dict[str, int], max_len=128):
+    def __init__(self, dataset: Dict[str, List[str]], tokenizer: BertTokenizerFast, max_len: int = 128):
         self.len = len(dataset['text'])
+        self.ner_labels_to_ids = ner_labels_to_ids()
+        self.intent_labels_to_ids = intent_labels_to_ids()
         self.text = dataset['text']
         self.intent = dataset['intent']
-        self.ner = dataset['ner']
-        self.tokenizer = tokenizer
+        self.ner = dataset['entities']
+        self.tokenizer = tokenizer()
         self.max_len = max_len
 
     def __getitem__(self, index: int) -> Dict[str, torch.Tensor]:
@@ -126,7 +55,7 @@ class tokenized_dataset(Dataset):
         )
 
         # step 3: create ner token labels only for first word pieces of each tokenized word
-        tokenized_ner_labels = [ner_labels_to_ids[label] for label in ner_labels]
+        tokenized_ner_labels = [self.ner_labels_to_ids[label] for label in ner_labels]
         # create an empty array of -100 of length max_length
         encoded_ner_labels = np.ones(len(encoding['offset_mapping']), dtype=int) * -100
 
@@ -145,7 +74,7 @@ class tokenized_dataset(Dataset):
                 prev = mapping[1]
 
         # create intent token labels
-        tokenized_intent_label = intent_labels_to_ids[intent_label]
+        tokenized_intent_label = self.intent_labels_to_ids[intent_label]
 
         # step 4: turn everything into Pytorch tensors
         item = {key: torch.as_tensor(val) for key, val in encoding.items()}
