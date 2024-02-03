@@ -40,7 +40,7 @@ class MultiTaskBertModel(pl.LightningModule):
         Perform a forward pass through Multi-task Bert model.
 
         Args:
-            input_ids (torch.Tensor): Input token IDs.
+            input_ids (torch.Tensor, torch.shape: (batch, length_of_tokenized_sequences)): Input token IDs.
             attention_mask (Optional[torch.Tensor]): Attention mask for input tokens.
 
         Returns:
