@@ -16,14 +16,14 @@ def test_data_module_setup():
 
 def test_data_module_train_dataloader():
     data_module = DataModule(train_data, val_data)
-    data_module.setup("fit")  # Ensure setup is called before accessing train_ds
+    data_module.setup("fit")
     data_loader = data_module.train_dataloader()
 
     assert isinstance(data_loader, torch.utils.data.DataLoader)
 
 def test_data_module_val_dataloader():
     data_module = DataModule(train_data, val_data)
-    data_module.setup("fit")  # Ensure setup is called before accessing val_ds
+    data_module.setup("fit")
     data_loader = data_module.val_dataloader()
 
     assert isinstance(data_loader, torch.utils.data.DataLoader)
