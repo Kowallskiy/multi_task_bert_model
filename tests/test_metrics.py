@@ -3,7 +3,7 @@ import pytest
 from src.metrics import MyAccuracy
 
 def test_my_accuracy_metric():
-    # Create an instance of the MyAccuracy metric
+   
     accuracy_metric = MyAccuracy()
 
     # Mock data for testing
@@ -18,7 +18,7 @@ def test_my_accuracy_metric():
     accuracy = accuracy_metric.compute()
 
     # Assert the correctness of the computed accuracy
-    assert 0.0 <= accuracy <= 1.0  # You should replace this with the expected accuracy based on your input
+    assert 0.0 <= accuracy <= 1.0
 
 if __name__ == "__main__":
     pytest.main()
