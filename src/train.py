@@ -1,5 +1,10 @@
 import wandb
 import pytorch_lightning as pl
+import sys
+import os
+
+project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(project_dir)
 
 from src.model import MultiTaskBertModel
 from src.utils import bert_config, tokenizer
@@ -26,7 +31,7 @@ dm = DataModule(tokenized_training_dataset, tokenized_validation_dataset)
 trainer = pl.Trainer(
     logger = wandb_logger,
     log_every_n_steps=40,
-    max_epochs=2,
+    max_epochs=1,
     deterministic=True,
     profiler='simple')
 
