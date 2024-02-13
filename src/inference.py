@@ -3,6 +3,7 @@ import os
 import sys
 from transformers import BertTokenizerFast
 import numpy as np
+import wandb
 
 project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(project_dir)
@@ -18,6 +19,11 @@ def load_model(model_path):
     model = MultiTaskBertModel(config, dataset)
     checkpoint = torch.load(model_path)
     model.load_state_dict(checkpoint['state_dict'])
+
+    model.to_torchscript(file_path="model.pt")
+
+    wandb.init(project="lit-wandb", entity="prince_")
+    wandb.save("model.pt")
 
     model.eval()
 
