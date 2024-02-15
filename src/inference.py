@@ -10,7 +10,8 @@ sys.path.append(project_dir)
 
 from src.model import MultiTaskBertModel
 from src.data_loader import load_dataset
-from src.utils import bert_config, tokenizer
+from src.utils import bert_config, tokenizer, intent_ids_to_labels, intent_labels_to_ids
+
 
 def load_model(model_path):
     config = bert_config()
@@ -20,10 +21,10 @@ def load_model(model_path):
     checkpoint = torch.load(model_path)
     model.load_state_dict(checkpoint['state_dict'])
 
-    model.to_torchscript(file_path="model.pt")
+    # model.to_torchscript(file_path="model.pt")
 
-    wandb.init(project="lit-wandb", entity="prince_")
-    wandb.save("model.pt")
+    # wandb.init(project="lit-wandb", entity="prince_")
+    # wandb.save("model.pt")
 
     model.eval()
 
@@ -50,12 +51,14 @@ def perform_inference(model, input_ids, attention_mask):
 
     return ner_logits, intent_logits
     
-def align_predictions_with_input(predictions, offset_mapping, input_text):
+def align_ner_predictions_with_input(predictions, offset_mapping, input_text):
     aligned_predictions = []
     current_word_idx = 0
 
     # Iterate through each prediction and its offset mapping
     for prediction, (start, end) in zip(predictions, offset_mapping):
+        if start == end:
+            continue
         # Find the corresponding word in the input text
         word = input_text[start:end]
 
@@ -68,11 +71,16 @@ def align_predictions_with_input(predictions, offset_mapping, input_text):
     
     return aligned_predictions
 
+def convert_intent_to_label(intent_logit):
+    labels = intent_labels_to_ids()
+    intent_labels = intent_ids_to_labels(labels)
+    return intent_labels[int(intent_logit)]
+
 def main():
     model_path = "C:/Users/Userpc/Desktop/model/lit-wandb/a5yyvgve/checkpoints/epoch=0-step=35.ckpt"
     model = load_model(model_path)
 
-    input_data = "Set a timer for 15 minutes"
+    input_data = "I want to schedule a meeting for the 15th of this month at 2:30 PM."
     input_ids, attention_mask, offset_mapping = preprocess_input(input_data)
 
     ner_logits, intent_logits = perform_inference(model, input_ids, attention_mask)
@@ -85,10 +93,11 @@ def main():
 
     print(offset_mapping)
 
-    ner_logits = align_predictions_with_input(ner_logits, offset_mapping, input_data)
+    ner_logits = align_ner_predictions_with_input(ner_logits, offset_mapping, input_data)
+    intent_label = convert_intent_to_label(intent_logits)
 
     print(f"Ner logits: {ner_logits}")
-    print(f"Intent logits: {intent_logits}")
+    print(f"Intent logits: {intent_label}")
 
 if __name__ == "__main__":
     main()
