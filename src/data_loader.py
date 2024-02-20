@@ -1,7 +1,13 @@
 import json
 import os
 from typing import Dict, List, Union
+import sys
+
+project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(project_dir)
+
 from src.utils import structure_data
+
 
 def load_dataset(dataset_name: str) -> Dict[str, Union[str, List[str]]]:
     """
@@ -24,7 +30,7 @@ def load_dataset(dataset_name: str) -> Dict[str, Union[str, List[str]]]:
     if dataset_name not in valid_names:
         raise ValueError(f"Invalid dataset name. Expected one of {valid_names}, got {dataset_name}")
     
-    path = f"C:/Users/Userpc/Desktop/model/data/raw/{dataset_name}.json"
+    path = f"data/raw/{dataset_name}.json"
 
     if not os.path.exists(path):
         raise FileNotFoundError(f"Dataset file not found at {path}")
