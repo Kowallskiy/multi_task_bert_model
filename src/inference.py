@@ -1,9 +1,6 @@
 import torch
 import os
 import sys
-from transformers import BertTokenizerFast
-import numpy as np
-import wandb
 
 project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(project_dir)
@@ -14,23 +11,40 @@ from src.utils import bert_config, tokenizer, intent_ids_to_labels, intent_label
 
 
 def load_model(model_path):
+    """
+    Load the pre-trained model weights from the specified path.
+
+    Args:
+        model_path (str): Path to the pre-trained model weights.
+
+    Returns:
+        model (MultiTaskBertModel): Loaded model with pre-trained weights.
+    """
+    # Initialize model with configuration and dataset information
     config = bert_config()
     dataset = load_dataset("training_dataset")
-
     model = MultiTaskBertModel(config, dataset)
-    checkpoint = torch.load(model_path)
-    model.load_state_dict(checkpoint['state_dict'])
 
-    # model.to_torchscript(file_path="model.pt")
-
-    # wandb.init(project="lit-wandb", entity="prince_")
-    # wandb.save("model.pt")
+    # Load the model weights from the specified path
+    model.load_state_dict(torch.load(model_path))
 
     model.eval()
 
     return model
 
 def preprocess_input(input_data):
+    """
+    Preprocess the input text data for inference.
+
+    Args:
+        input_data (str): Input text data to be preprocessed.
+
+    Returns:
+        input_ids (torch.Tensor): Tensor of input IDs after tokenization.
+        attention_mask (torch.Tensor): Tensor of attention mask indicating input tokens.
+        offset_mapping (torch.Tensor): Tensor of offset mappings for input tokens.
+    """
+    # Tokenize the input text and get offset mappings
     tok = tokenizer()
     preprocessed_input = tok(input_data,
                                    return_offsets_mapping=True,
@@ -38,6 +52,7 @@ def preprocess_input(input_data):
                                    truncation=True,
                                    max_length=128)
 
+    # Convert preprocessed inputs to PyTorch tensors
     input_ids = torch.tensor([preprocessed_input['input_ids']])
     attention_mask = torch.tensor([preprocessed_input['attention_mask']])
     offset_mapping = torch.tensor(preprocessed_input['offset_mapping'])
@@ -76,28 +91,35 @@ def convert_intent_to_label(intent_logit):
     intent_labels = intent_ids_to_labels(labels)
     return intent_labels[int(intent_logit)]
 
-def main():
-    model_path = "C:/Users/Userpc/Desktop/model/lit-wandb/a5yyvgve/checkpoints/epoch=0-step=35.ckpt"
+
+def main(input_data):
+    """
+    Main function to perform inference using the pre-trained model.
+    """
+    # Load the pre-trained model
+    model_path = "artifacts/trained_models/pytorch_model.bin"
     model = load_model(model_path)
 
-    input_data = "I want to schedule a meeting for the 15th of this month at 2:30 PM."
+    # Preprocess the input text
     input_ids, attention_mask, offset_mapping = preprocess_input(input_data)
 
+    # Perform inference using the pre-trained model
     ner_logits, intent_logits = perform_inference(model, input_ids, attention_mask)
 
-    # print(f"Ner logits: {ner_logits.view(-1, 9).shape}")
-    # print(f"Intent logits: {intent_logits}")
-
+    # Post-process the model outputs and print the results
     ner_logits = torch.argmax(ner_logits.view(-1, 9), dim=1)
     intent_logits = torch.argmax(intent_logits)
-
-    print(offset_mapping)
 
     ner_logits = align_ner_predictions_with_input(ner_logits, offset_mapping, input_data)
     intent_label = convert_intent_to_label(intent_logits)
 
-    print(f"Ner logits: {ner_logits}")
-    print(f"Intent logits: {intent_label}")
+    return ner_logits, intent_label
+    
 
 if __name__ == "__main__":
-    main()
+
+    input_data = "I want to schedule a meeting for the 15th of this month at 2:30 PM."
+    ner_logits, intent_label = main(input_data)
+
+    print(f"Ner logits: {ner_logits}")
+    print(f"Intent logits: {intent_label}")
