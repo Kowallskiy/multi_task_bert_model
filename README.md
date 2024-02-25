@@ -163,5 +163,32 @@ class MultiTaskBertModel(pl.LightningModule):
 ```
 
 ## Training
+```Python
+wandb.login()
 
+config = bert_config()
+
+training_data_raw = load_dataset('training_dataset')
+validation_data_raw = load_dataset('validation_dataset')
+
+tokenized_training_dataset = tokenized_dataset(training_data_raw, tokenizer)
+tokenized_validation_dataset = tokenized_dataset(validation_data_raw, tokenizer)
+
+wandb_logger = pl.loggers.WandbLogger(project='lit-wandb')
+
+model = MultiTaskBertModel(config, training_data_raw)
+
+dm = DataModule(tokenized_training_dataset, tokenized_validation_dataset)
+
+trainer = pl.Trainer(
+    logger = wandb_logger,
+    log_every_n_steps=40,
+    max_epochs=3,
+    deterministic=True,
+    profiler='simple')
+
+trainer.fit(model, dm)
+
+wandb.finish()
+```
 
