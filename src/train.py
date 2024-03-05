@@ -31,7 +31,7 @@ dm = DataModule(tokenized_training_dataset, tokenized_validation_dataset)
 trainer = pl.Trainer(
     logger = wandb_logger,
     log_every_n_steps=40,
-    max_epochs=1,
+    max_epochs=3,
     deterministic=True,
     profiler='simple')
 
