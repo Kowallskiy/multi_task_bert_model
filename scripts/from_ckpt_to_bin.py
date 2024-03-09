@@ -11,7 +11,7 @@ from src.model import MultiTaskBertModel
 from src.data_loader import load_dataset
 from src.utils import bert_config
 
-checkpoint_path = "lit-wandb/a5yyvgve/checkpoints/epoch=0-step=35.ckpt"
+checkpoint_path = "lit-wandb/lbejgyem/checkpoints/epoch=2-step=105.ckpt"
 checkpoint = torch.load(checkpoint_path, map_location=torch.device('cpu'))
 
 # Extract the state dictionary
