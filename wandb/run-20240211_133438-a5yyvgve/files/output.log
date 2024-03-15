@@ -1,0 +1,114 @@
+
+Sanity Checking DataLoader 0:   0%|                                                                             | 0/2 [00:00<?, ?it/s]
+  | Name              | Type       | Params
+-------------------------------------------------
+0 | dropout           | Dropout    | 0
+1 | model             | BertModel  | 109 M
+2 | ner_classifier    | Linear     | 6.9 K
+3 | intent_classifier | Linear     | 3.8 K
+4 | accuracy          | MyAccuracy | 0
+-------------------------------------------------
+109 M     Trainable params
+0         Non-trainable params
+109 M     Total params
+437.972   Total estimated model params size (MB)
+
+
+
+C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:441: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=3` in the `DataLoader` to improve performance.
+Epoch 0:   0%|                                                                                                 | 0/35 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0: 100%|████████████████████████████████████████████████████████████████████████████| 35/35 [02:21<00:00,  0.25it/s, v_num=vgve]
+
+
+
+
+
+
+
+
+
+Epoch 0: 100%|█| 35/35 [04:12<00:00,  0.14it/s, v_num=vgve, validation_loss=2.850, val_ner_accuracy=0.566, val_intent_accuracy=0.333,
+
+Epoch 0: 100%|█| 35/35 [10:13<00:00,  0.06it/s, v_num=vgve, validation_loss=2.850, val_ner_accuracy=0.566, val_intent_accuracy=0.333,
+FIT Profiler Report
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Action                                                                                                                                                         	|  Mean duration (s)	|  Num calls      	|  Total time (s) 	|  Percentage %   	|
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Total                                                                                                                                                          	|  -              	|  1719           	|  774.64         	|  100 %          	|
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  [Callback]ModelCheckpoint{'monitor': None, 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}.on_train_epoch_end       	|  346.66         	|  1              	|  346.66         	|  44.751         	|
+|  run_training_epoch                                                                                                                                             	|  252.09         	|  1              	|  252.09         	|  32.543         	|
+|  [LightningModule]MultiTaskBertModel.on_validation_epoch_end                                                                                                    	|  110.88         	|  2              	|  221.77         	|  28.628         	|
+|  run_training_batch                                                                                                                                             	|  3.7785         	|  35             	|  132.25         	|  17.072         	|
+|  [LightningModule]MultiTaskBertModel.optimizer_step                                                                                                             	|  3.7317         	|  35             	|  130.61         	|  16.86          	|
+|  [Strategy]SingleDeviceStrategy.backward                                                                                                                        	|  0.80489        	|  35             	|  28.171         	|  3.6367         	|
+|  [Strategy]SingleDeviceStrategy.training_step                                                                                                                   	|  0.67006        	|  35             	|  23.452         	|  3.0275         	|
+|  [Strategy]SingleDeviceStrategy.validation_step                                                                                                                 	|  0.51377        	|  26             	|  13.358         	|  1.7244         	|
+|  [_TrainingEpochLoop].train_dataloader_next                                                                                                                     	|  0.23077        	|  35             	|  8.077          	|  1.0427         	|
+|  [_EvaluationLoop].val_next                                                                                                                                     	|  0.18996        	|  26             	|  4.939          	|  0.63759        	|
+|  [Callback]TQDMProgressBar.on_train_end                                                                                                                         	|  2.172          	|  1              	|  2.172          	|  0.28039        	|
+|  [Callback]TQDMProgressBar.on_validation_end                                                                                                                    	|  1.023          	|  2              	|  2.046          	|  0.26412        	|
+|  [Callback]TQDMProgressBar.on_train_batch_end                                                                                                                   	|  0.023229       	|  35             	|  0.813          	|  0.10495        	|
+|  [Callback]ModelCheckpoint{'monitor': None, 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}.on_validation_end        	|  0.258          	|  2              	|  0.516          	|  0.066611       	|
+|  [LightningModule]MultiTaskBertModel.on_validation_model_zero_grad                                                                                              	|  0.469          	|  1              	|  0.469          	|  0.060544       	|
+|  [LightningDataModule]DataModule.train_dataloader                                                                                                               	|  0.343          	|  1              	|  0.343          	|  0.044279       	|
+|  [LightningModule]MultiTaskBertModel.optimizer_zero_grad                                                                                                        	|  0.0080571      	|  35             	|  0.282          	|  0.036404       	|
+|  [Callback]TQDMProgressBar.on_train_epoch_end                                                                                                                   	|  0.188          	|  1              	|  0.188          	|  0.024269       	|
+|  [Callback]ModelSummary.on_validation_end                                                                                                                       	|  0.0625         	|  2              	|  0.125          	|  0.016137       	|
+|  [LightningModule]MultiTaskBertModel.on_validation_end                                                                                                          	|  0.0625         	|  2              	|  0.125          	|  0.016137       	|
+|  [Strategy]SingleDeviceStrategy.on_validation_end                                                                                                               	|  0.0465         	|  2              	|  0.093          	|  0.012006       	|
+|  [Callback]TQDMProgressBar.on_sanity_check_start                                                                                                                	|  0.078          	|  1              	|  0.078          	|  0.010069       	|
+|  [Callback]TQDMProgressBar.on_validation_batch_end                                                                                                              	|  0.003          	|  26             	|  0.078          	|  0.010069       	|
+|  [Callback]TQDMProgressBar.on_train_start                                                                                                                       	|  0.078          	|  1              	|  0.078          	|  0.010069       	|
+|  [LightningModule]MultiTaskBertModel.on_validation_model_train                                                                                                  	|  0.0235         	|  2              	|  0.047          	|  0.0060673      	|
+|  [Callback]TQDMProgressBar.on_validation_start                                                                                                                  	|  0.023          	|  2              	|  0.046          	|  0.0059382      	|
+|  [Callback]ModelSummary.on_fit_start                                                                                                                            	|  0.032          	|  1              	|  0.032          	|  0.0041309      	|
+|  [Strategy]SingleDeviceStrategy.batch_to_device                                                                                                                 	|  0.00052459     	|  61             	|  0.032          	|  0.0041309      	|
+|  [LightningModule]MultiTaskBertModel.configure_optimizers                                                                                                       	|  0.031          	|  1              	|  0.031          	|  0.0040019      	|
+|  [Callback]ModelSummary.on_train_end                                                                                                                            	|  0.031          	|  1              	|  0.031          	|  0.0040019      	|
+|  [LightningModule]MultiTaskBertModel.on_validation_model_eval                                                                                                   	|  0.008          	|  2              	|  0.016          	|  0.0020655      	|
+|  [Callback]TQDMProgressBar.on_validation_batch_start                                                                                                            	|  0.00061538     	|  26             	|  0.016          	|  0.0020655      	|
+|  [Callback]ModelCheckpoint{'monitor': None, 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}.on_after_backward        	|  0.00045714     	|  35             	|  0.016          	|  0.0020655      	|
+|  [Callback]ModelCheckpoint{'monitor': None, 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}.setup                    	|  0.015          	|  1              	|  0.015          	|  0.0019364      	|
+|  [LightningModule]MultiTaskBertModel.configure_callbacks                                                                                                        	|  0.0            	|  1              	|  0.0            	|  0.0            	|
+|  [LightningDataModule]DataModule.prepare_data                                                                                                                   	|  0.0            	|  1              	|  0.0            	|  0.0            	|
+|  [LightningModule]MultiTaskBertModel.prepare_data                                                                                                               	|  0.0            	|  1              	|  0.0            	|  0.0            	|
+|  [LightningDataModule]DataModule.setup                                                                                                                          	|  0.0            	|  1              	|  0.0            	|  0.0            	|
+|  [Callback]TQDMProgressBar.setup                                                                                                                                	|  0.0            	|  1              	|  0.0            	|  0.0            	|
+|  [Callback]ModelSummary.setup                                                                                                                                   	|  0.0            	|  1              	|  0.0            	|  0.0            	|
+|  [LightningModule]MultiTaskBertModel.setup                                                                                                                      	|  0.0            	|  1              	|  0.0            	|  0.0            	|
+|  [Callback]TQDMProgressBar.on_fit_start                                                                                                                         	|  0.0            	|  1              	|  0.0            	|  0.0            	|
+|  [Callback]ModelCheckpoint{'monitor': None, 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}.on_fit_start             	|  0.0            	|  1              	|  0.0            	|  0.0            	|
