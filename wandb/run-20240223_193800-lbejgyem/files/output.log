@@ -1,0 +1,175 @@
+  | Name              | Type       | Params
+-------------------------------------------------
+0 | dropout           | Dropout    | 0
+1 | model             | BertModel  | 109 M
+2 | ner_classifier    | Linear     | 6.9 K
+3 | intent_classifier | Linear     | 3.8 K
+4 | accuracy          | MyAccuracy | 0
+-------------------------------------------------
+109 M     Trainable params
+0         Non-trainable params
+109 M     Total params
+437.972   Total estimated model params size (MB)
+C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:441: The 'val_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=3` in the `DataLoader` to improve performance.
+
+
+
+C:\Users\Userpc\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytorch_lightning\trainer\connectors\data_connector.py:441: The 'train_dataloader' does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` to `num_workers=3` in the `DataLoader` to improve performance.
+Epoch 0:   0%|                                                                                                 | 0/35 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0: 100%|████████████████████████████████████████████████████████████████████████████| 35/35 [02:08<00:00,  0.27it/s, v_num=gyem]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 1: 100%|█| 35/35 [01:47<00:00,  0.33it/s, v_num=gyem, validation_loss=3.020, val_ner_accuracy=0.543, val_intent_accuracy=0.458,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 2: 100%|█| 35/35 [01:56<00:00,  0.30it/s, v_num=gyem, validation_loss=2.430, val_ner_accuracy=0.646, val_intent_accuracy=0.417,
+
+
+
+
+
+
+
+
+Epoch 2: 100%|█| 35/35 [04:14<00:00,  0.14it/s, v_num=gyem, validation_loss=2.240, val_ner_accuracy=0.688, val_intent_accuracy=0.458,
+FIT Profiler Report
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Action                                                                                                                                                         	|  Mean duration (s)	|  Num calls      	|  Total time (s) 	|  Percentage %   	|
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Total                                                                                                                                                          	|  -              	|  4981           	|  962.05         	|  100 %          	|
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  run_training_epoch                                                                                                                                             	|  179.6          	|  3              	|  538.8          	|  56.005         	|
+|  run_training_batch                                                                                                                                             	|  3.2253         	|  105            	|  338.66         	|  35.202         	|
+|  [LightningModule]MultiTaskBertModel.optimizer_step                                                                                                             	|  3.2168         	|  105            	|  337.77         	|  35.109         	|
+|  [LightningModule]MultiTaskBertModel.on_validation_epoch_end                                                                                                    	|  70.473         	|  4              	|  281.89         	|  29.301         	|
+|  [Callback]ModelCheckpoint{'monitor': None, 'mode': 'min', 'every_n_train_steps': 0, 'every_n_epochs': 1, 'train_time_interval': None}.on_train_epoch_end       	|  87.411         	|  3              	|  262.23         	|  27.258         	|
+|  [Strategy]SingleDeviceStrategy.backward                                                                                                                        	|  0.74228        	|  105            	|  77.939         	|  8.1014         	|
+|  [Strategy]SingleDeviceStrategy.training_step                                                                                                                   	|  0.68725        	|  105            	|  72.161         	|  7.5008         	|
+|  [Strategy]SingleDeviceStrategy.validation_step                                                                                                                 	|  0.44676        	|  74             	|  33.06          	|  3.4364         	|
+|  [_TrainingEpochLoop].train_dataloader_next                                                                                                                     	|  0.095781       	|  105            	|  10.057         	|  1.0454         	|
+|  [Callback]TQDMProgressBar.on_train_end                                                                                                                         	|  1.453          	|  1              	|  1.453          	|  0.15103        	|
+|  [_EvaluationLoop].val_next                                                                                                                                     	|  0.017135       	|  74             	|  1.268          	|  0.1318         	|
+|  [Callback]TQDMProgressBar.on_train_epoch_start                                                                                                                 	|  0.344          	|  3              	|  1.032          	|  0.10727        	|
+|  [LightningModule]MultiTaskBertModel.optimizer_zero_grad                                                                                                        	|  0.0071238      	|  105            	|  0.748          	|  0.077751       	|
+|  [Callback]TQDMProgressBar.on_train_batch_end                                                                                                                   	|  0.0059714      	|  105            	|  0.627          	|  0.065174       	|
+|  [Callback]TQDMProgressBar.on_validation_end                                                                                                                    	|  0.0585         	|  4              	|  0.234          	|  0.024323       	|
+|  [Callback]TQDMProgressBar.on_validation_batch_end                                                                                                              	|  0.0025405      	|  74             	|  0.188          	|  0.019542       	|
+|  [Callback]TQDMProgressBar.on_validation_start                                                                                                                  	|  0.03875        	|  4              	|  0.155          	|  0.016111       	|
+|  [LightningDataModule]DataModule.train_dataloader                                                                                                               	|  0.125          	|  1              	|  0.125          	|  0.012993       	|
+|  [Callback]TQDMProgressBar.on_fit_end                                                                                                                           	|  0.125          	|  1              	|  0.125          	|  0.012993       	|
+|  [Callback]TQDMProgressBar.on_train_start                                                                                                                       	|  0.094          	|  1              	|  0.094          	|  0.0097708      	|
+|  [LightningModule]MultiTaskBertModel.on_validation_model_zero_grad                                                                                              	|  0.030667       	|  3              	|  0.092          	|  0.0095629      	|
+|  [Callback]TQDMProgressBar.on_sanity_check_start                                                                                                                	|  0.078          	|  1              	|  0.078          	|  0.0081077      	|
+|  [Callback]TQDMProgressBar.on_train_epoch_end                                                                                                                   	|  0.026          	|  3              	|  0.078          	|  0.0081077      	|

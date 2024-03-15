@@ -1,0 +1,53 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.11.4",
+    "heartbeatAt": "2024-02-23T15:38:04.562972",
+    "startedAt": "2024-02-23T15:38:00.530587",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "c:\\Users\\Userpc\\Desktop\\model\\src\\train.py",
+    "codePathLocal": "src\\train.py",
+    "codePath": "src\\train.py",
+    "git": {
+        "remote": "https://github.com/Kowallskiy/model.git",
+        "commit": "9b269283d2ea87d9723574a83e3a6a758fbe9291"
+    },
+    "email": "trane-101@yandex.ru",
+    "root": "C:/Users/Userpc/Desktop/model",
+    "host": "User",
+    "username": "Userpc",
+    "executable": "C:\\Users\\Userpc\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "cpu_count": 2,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 2197.0,
+        "min": 0.0,
+        "max": 2197.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2197.0,
+            "min": 0.0,
+            "max": 2197.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 372.60351181030273,
+            "used": 329.974422454834
+        }
+    },
+    "gpu": "GeForce 930M",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "GeForce 930M",
+            "memory_total": 2147483648
+        }
+    ],
+    "memory": {
+        "total": 5.905109405517578
+    }
+}
