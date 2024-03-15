@@ -1,4 +1,4 @@
-# Multi-Task Bert Model
+# Multi-Task BERT Model for Task Scheduling
 
 ## Description
 This model is designed for a scheduler application, capable of handling various tasks such as setting timers, scheduling meetings, appointments, 
@@ -12,9 +12,12 @@ determine the overall task intention. The model's outputs facilitate efficient t
   to the user's query. This categorization streamlines the decision-making process, ensuring that the scheduler application responds promptly and accurately to user commands.
 
 ## Deployed Demo Model
-The interactive demonstration of the model is accessible via [HuggingFace Spaces](https://huggingface.co/spaces/kowalsky/multi_task_bert).
+Experience the model in action through an interactive demonstration available on [HuggingFace Spaces](https://huggingface.co/spaces/kowalsky/multi_task_bert). Dive into the capabilities of the Multi-Task BERT Model and witness firsthand its potential to streamline your scheduling tasks.
 
 ## Model Architecture
+
+At the heart of the solution is the MultiTaskBertModel, a class extending __pl.LightningModule__, tailored for dual tasks of _NER_ and _Intent Classification_. It leverages a BertModel for encoding input text, followed by specialized linear layers for each task. This architecture ensures that the model not only captures the essence of each task but also optimizes for performance and accuracy.
+
 ```Python
 class MultiTaskBertModel(pl.LightningModule):
 
@@ -163,6 +166,9 @@ class MultiTaskBertModel(pl.LightningModule):
 ```
 
 ## Training
+
+The model training process is streamlined with the integration of __WandB__ for real-time tracking of training metrics and outputs. Training and validation steps are meticulously designed to evaluate the model's performance accurately, ensuring that each iteration improves upon the last.
+
 ```Python
 wandb.login()
 
