@@ -2,7 +2,7 @@
 
 ## Description
 This model is designed for a scheduler application, capable of handling various tasks such as setting timers, scheduling meetings, appointments, 
-and alarms. It provides Named Entity Recognition (NER) labels to identify specific entities within the input text, along with an Intent label to 
+and alarms. It provides _Named Entity Recognition (NER)_ labels to identify specific entities within the input text, along with an _Intent_ label to 
 determine the overall task intention. The model's outputs facilitate efficient task management and organization, enabling seamless interaction with the scheduler application.
 * __Named Entity Recognition (NER) Labeling:__ NER labeling enables the model to identify and categorize specific entities within the input text. These entities could
   include dates, times, locations, participants, and other relevant information essential for scheduling tasks. By extracting and labeling these entities, the model can
